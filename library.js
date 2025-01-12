@@ -37,7 +37,26 @@ addBook.addEventListener("click", (e) => {
   <p>author: ${book.author}</p>
   <p>page number: ${book.pageNo}</p>`;
     if (index === myLibrary.length - 1) cards.appendChild(card);
+    const remove = document.createElement("button");
+    remove.classList.add("remove");
+    remove.textContent = "remove";
+    card.appendChild(remove);
+    remove.addEventListener("click", () => {
+      cards.removeChild(card);
+    });
+    const haveRead = document.createElement("button");
+    haveRead.classList.add("have-read");
+    haveRead.textContent = "No";
+    card.appendChild(haveRead);
+    haveRead.addEventListener("click", () => {
+      if (haveRead.textContent === "No") {
+        haveRead.textContent = "Yes";
+      } else {
+        haveRead.textContent = "No";
+      }
+    });
   });
+
   bookTitle.value = "";
   bookAuthor.value = "";
   bookPageNo.value = "";
@@ -47,4 +66,3 @@ addBook.addEventListener("click", (e) => {
 closeModal.addEventListener("click", () => {
   dialog.close();
 });
-

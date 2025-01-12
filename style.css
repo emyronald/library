@@ -12,3 +12,7 @@
 .card {
     border: 2px solid black;
 }
+
+.have-read::before {
+    content: 'read:';
+}
