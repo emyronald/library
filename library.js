@@ -1,10 +1,18 @@
 const myLibrary = [];
 
-function Book(title, author, pageNo) {
-  // the constructor...
-  this.title = title;
-  this.author = author;
-  this.pageNo = pageNo;
+class Book {
+  constructor(title, author, pageNo) {
+    // the constructor...
+    this.title = title;
+    this.author = author;
+    this.pageNo = pageNo;
+  }
+
+  addBookToLibrary(title, author, pageNo) {
+    let thisBook = new Book(title, author, pageNo);
+    myLibrary.push(thisBook);
+    console.log(myLibrary);
+  }
 }
 
 function addBookToLibrary(title, author, pageNo) {
